@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=parseInt(prompt("Enter a number:"));
+        var temp=n;
+        var count=0;
+        var sum=0;
+        var r=0;
+        while(n!=0){
+            n=parseInt(n/10);
+            count++;
+        }
+
+        n=temp;
+        console.log(count);
+        
+       while(n!=0){
+        r=parseInt(n%10);
+        var sum1=1
+        for(let i=1;i<=count;i++){
+            sum1=sum1*r;
+        }
+        sum=sum+sum1
+        n=parseInt(n/10);
+       }
+       
+       if(sum==temp){
+        document.write("number is armstrong");
+       }
+       else{
+        document.write("number is not armstrong")
+       }
+    </script>
+</body>
+</html>
