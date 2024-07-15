@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>username</label>
+        <input type="text" id="username">
+       
+        <label>password</label>
+        <input type="password" id="password">
+
+        <label>repeat-password</label>
+        <input type="password" id="re-password">
+
+        <label>age</label>
+    
+     
+        <button onclick="validate()">submit</button>
+        <div id="successMsg" style="color: green"></div>
+        <div id="errorMsg" style="color: red"></div>
+    
+    </div>
+    <script>
+        function validate() {
+             user=document.getElementById("username").value;
+             userRegex=/^[a-zA-Z\-]+$/;
+
+            if (userRegex.test(user)) {
+                document.getElementById("successMsg").innerHTML="Valid username";
+                document.getElementById("errorMsg").innerHTML="";
+            }else{
+                document.getElementById("errorMsg").innerHTML="InValid username";
+                document.getElementById("successMsg").innerHTML="";
+            }
+           
+            user1=document.getElementById("password").value;
+            user1Regex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+            if (user1Regex.test(user1)) {
+                document.getElementById("successMsg").innerHTML="Valid Password";
+                document.getElementById("errorMsg").innerHTML="";
+            }else{
+                document.getElementById("errorMsg").innerHTML="InValid Password";
+                document.getElementById("successMsg").innerHTML="";
+            }
+         
+          
+            user2=document.getElementById("re-password").value;
+            user2Regex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+            if(user1==user2){
+                document.getElementById("successMsg").innerHTML="Valid rePassword";
+                document.getElementById("errorMsg").innerHTML="";
+            }
+            else{
+                document.getElementById("errorMsg").innerHTML="InValid rePassword";
+                document.getElementById("successMsg").innerHTML="";
+            }
+
+        
+        }
+
+    </script>
+</body>
+</html>
